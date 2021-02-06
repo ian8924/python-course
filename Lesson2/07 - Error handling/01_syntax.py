@@ -1,6 +1,6 @@
 name_one = 'Alice'
 name_two = 'Yang'
-if name_one == name_two
+if name_one == name_two:
     print('Equal')
-else
+else:
     print('Not Equal')

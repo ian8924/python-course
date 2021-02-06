@@ -14,3 +14,11 @@
 # Ann Yang -> Ann Yang
 # Michelle Li -> M. Li
 # Taylor Swift -> Swift
+first_name=input('input first name:')
+last_name=input('input last name:')
+if len(first_name)<5 and len(last_name):
+    print(f'{first_name} {last_name}')
+elif (len(first_name)>=5) and (len(last_name)<5):
+    print(f'{first_name[0]}. {last_name}')
+else:
+    print(f'{first_name}')
