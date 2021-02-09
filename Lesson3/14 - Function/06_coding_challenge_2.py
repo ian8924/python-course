@@ -16,3 +16,12 @@
 # ***
 # ****
 # *****
+
+def draw(num):
+    for i in range(1,num+1):
+        row=''
+        for i in range(0,i):
+            row=row+'*'
+        print(row)
+num= int(input('enter a number:'))
+draw(num)

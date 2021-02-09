@@ -8,3 +8,11 @@
 # sequential_add(1,10) -> 回傳55
 # sequential_add(5,10) -> 回傳45
 # sequential_add(10,1000)-> 回傳500455
+def sequential_add(n1,n2):
+    total=0
+    for i in range(n1,n2+1):
+        total=total+i
+    print(total)
+sequential_add(1,10)
+sequential_add(5,10)
+sequential_add(10,1000)

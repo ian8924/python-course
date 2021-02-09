@@ -13,4 +13,17 @@
 # 例如輸入5, 8, multiply
 # 回傳40
 
+def calculate(first_num,second_num,operation):
+    if operation=='add':
+        return first_num+second_num
+    elif operation=='subtract':
+        return first_num-second_num
+    elif operation=='multiply':
+        return first_num*second_num
+
+print(calculate(5,8,'add'))
+print(calculate(5,8,'subtract'))
+print(calculate(5,8,'multiply'))
+
+
 

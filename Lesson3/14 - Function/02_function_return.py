@@ -1,6 +1,7 @@
 def multiply1(num1, num2):
     total = num1 * num2
     print(total)
+    return total
 
 def multiply2(num1, num2):
     total = num1 * num2
