@@ -9,4 +9,20 @@
 # 讀取number.txt檔案每一行，並且把數字加總起來
 # 印出加總
 # hint: for loop!
-    
+
+import json
+
+with open('number.txt', mode = 'w') as file:
+    file.write('10\n')
+    file.write('20\n')
+    file.write('30\n')
+    file.write('40\n')
+    file.write('50')
+
+with open('number.txt', mode = 'r') as file:
+    data = file.read().split('\n')
+    total = 0
+    for i in data:
+        total = total+ int(i)
+        # print(i)
+print (total)
