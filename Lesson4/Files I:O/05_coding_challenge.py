@@ -20,9 +20,11 @@ with open('number.txt', mode = 'w') as file:
     file.write('50')
 
 with open('number.txt', mode = 'r') as file:
-    data = file.read().split('\n')
+    data = file.read().split('\n') 
+    #  ['10','20','30','40','50']
     total = 0
     for i in data:
         total = total+ int(i)
         # print(i)
 print (total)
+
