@@ -1,1 +1,1 @@
-https://www.amazon.com/
+utf-8

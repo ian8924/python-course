@@ -14,7 +14,13 @@ with request.urlopen(src) as response:
 video_List = data['items']
 # print(video_List)
 
-with open('video.txt', 'w', encoding='utf-8') as file:
-    for idx,video in enumerate(video_List,start=1):
-        file.write(f'#{idx} {video["snippet"]["channelTitle"]} \n{video["snippet"]["title"]}\nhttps://www.youtube.com/watch?v={video["id"]}\n')
+# with open('video.txt', 'w', encoding='utf-8') as file:
+#     for idx,video in enumerate(video_List,start=1):
+#         file.write(f'#{idx} {video["snippet"]["channelTitle"]} \n{video["snippet"]["title"]}\nhttps://www.youtube.com/watch?v={video["id"]}\n')
 
+path = 'output_data.txt'
+with open(path, 'w', encoding='utf-8') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['No', 'channelTitle', 'link'])
+    for idx,video in enumerate(video_List,start=1):
+        writer.writerow([idx, video["snippet"]["title"], f'https://www.youtube.com/watch?v={video["id"]}'])
