@@ -16,5 +16,5 @@ video_List = data['items']
 
 with open('video.txt', 'w', encoding='utf-8') as file:
     for idx,video in enumerate(video_List,start=1):
-        file.write(f'#{idx} {video["snippet"]["title"]}\n channel:{video["snippet"]["channelTitle"]} link:https://www.youtube.com/watch?v={video["id"]}\n')
+        file.write(f'#{idx} {video["snippet"]["channelTitle"]} \n{video["snippet"]["title"]}\nhttps://www.youtube.com/watch?v={video["id"]}\n')
 
