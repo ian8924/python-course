@@ -13,8 +13,8 @@ with request.urlopen(src) as response:
 # 取得景點列表
 video_List = data['items']
 
-path = 'output_data.txt'
-with open(path, 'w', encoding='utf-8') as csvfile:
+path = 'output_data.csv'
+with open(path, 'w', encoding='utf-8-sig') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['No', 'video_title','channel','publish time','link','description'])
     for idx,video in enumerate(video_List,start=1):
