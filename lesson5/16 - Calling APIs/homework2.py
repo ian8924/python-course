@@ -44,6 +44,30 @@ def voiceRecognition():
 ssl._create_default_https_context = ssl._create_unverified_context #for Mmac
 src = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=rdec-key-123-45678-011121314'
 
+def callfun():
+    words = voiceRecognition().lower()
+    total=0
+    method=''
+    if '加' in words or '+' in words:
+        method='加'
+        arr=words.split('加')
+        for i in arr:
+            total=total+int(i)
+    elif '減' in words or '-' in words:
+        method='減'
+        arr=words.split('減')
+        total=int(arr[0])-int(arr[1])
+    elif '乘' in words or '*' in words:
+        method='乘'
+        arr=words.split('乘')
+        total=int(arr[0])*int(arr[1])
+    elif '除' in words or '/' in words:
+        method='除'
+        arr=words.split('除')
+        total=int(arr[0])/int(arr[1])
+    else:
+        callfun()
+    speak(f'{arr[0]}{method}{arr[1]}等於{total}')
 
 if __name__ == "__main__":
     # greet()
@@ -89,26 +113,29 @@ if __name__ == "__main__":
             words = voiceRecognition().lower()
             total=0
             method=''
-            if '加' in words:
+            if '加' in words or '+' in words:
                 method='加'
                 arr=words.split('加')
                 for i in arr:
                     total=total+int(i)
-            elif '減' in words:
+                speak(f'{arr[0]}{method}{arr[1]}等於{total}')
+            elif '減' in words or '-' in words:
                 method='減'
                 arr=words.split('減')
                 total=int(arr[0])-int(arr[1])
-            elif '乘' in words:
+                speak(f'{arr[0]}{method}{arr[1]}等於{total}')
+            elif '乘' in words or '*' in words:
                 method='乘'
                 arr=words.split('乘')
                 total=int(arr[0])*int(arr[1])
-            elif '除' in words:
+                speak(f'{arr[0]}{method}{arr[1]}等於{total}')
+            elif '除' in words or '/' in words:
                 method='除'
                 arr=words.split('除')
                 total=int(arr[0])/int(arr[1])
+                speak(f'{arr[0]}{method}{arr[1]}等於{total}')
             else:
-                break
-            speak(f'{arr[0]}{method}{arr[1]}等於{total}')
+                callfun()
 
 
             
